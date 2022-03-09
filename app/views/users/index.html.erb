@@ -1,0 +1,10 @@
+<h1>User info</h1>
+<% @users.each do |user| %>
+<td>
+  <tr>name</tr>
+  <tr><%= user.name %></tr>
+</td>
+<p>introduction:<%= user.introduction %></p>
+<p><%= link_to"a",edit_user_path(user)%></p>
+
+<% end %>
