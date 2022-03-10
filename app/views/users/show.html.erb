@@ -1,1 +1,15 @@
-<h1>a</h1>
+
+<%= render 'layouts/list',book: @book, user: @user %>
+
+
+<h1>Books</h1>
+<tr>
+    <td>Title</td>
+    <td>Opinion</td>
+    </tr>
+<% @books.each do |book| %>
+
+    <p> <%=link_to book.title, book_path(book.id) %></p>
+    <p><%= book.body %></p>
+   
+<% end %>
