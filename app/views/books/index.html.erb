@@ -1,5 +1,7 @@
+
 <%= render 'layouts/list',book: @book, user: @user %>
 
+<table class="table table-striped">
 <h1>Books</h1>
 <tr>
     <td>Title</td>
@@ -13,3 +15,4 @@
 <p><%= link_to book.title,book_path(book.id) %></p>
 <p><%= book.body%></p>
 <% end %>
+</table>
