@@ -1,5 +1,9 @@
+<div class="container">
+ <div class="row">
+  <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
 <h1>User info</h1>
 <%= form_with model:@user, local:true do |f| %>
+<div class="form-group">
 <ul><label for="inputName">Name</label></ul>
 <%= f.text_field :name, autofocus: true, id:"inputName"%>
 <%= attachment_image_tag@user, :profile_image%>
@@ -7,5 +11,8 @@
 <%= f.attachment_field:profile_image %>
 <ul><label for="inputIntroduction">Introduction</label></ul>
  <%= f.text_field :introduction, autofocus: true,id:"introduction"%>
-  <ul><%= f.submit "Update User" %></ul>
+  <ul><%= f.submit "Update User", class: "btn btn-sm btn-secondary" %></ul>
 <% end %>
+</div>
+</div
+</div>
