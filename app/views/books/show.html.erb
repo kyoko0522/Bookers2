@@ -29,9 +29,9 @@
     <td><%= attachment_image_tag @user, :profile_image, :fill, 10, 10, fallback: "no_image.jpg"%>
     <p><%= link_to @user.name, user_path(@user) %></p></td>
     <td><%=link_to @book.title %></td>
-    <td><%= @book.body %></td>
+    <td><%= @book.body %></td>  
+    <% if @book.user = current_user %>
     <td><%= link_to'Edit', edit_book_path(@book), class: "btn btn-sm btn-success" %></td>
-     <% if @book.user = current_user %>
     <td><%= link_to'Destroy', book_path(@book), method: :delete, data: {confirm: "本当に消しますか？"}, class: "btn btn-sm btn-danger" %></td>
     <% end %>
     </tr>
