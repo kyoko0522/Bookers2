@@ -2,15 +2,21 @@
  <div class="row">
   <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
 <h1>User info</h1>
+<% if @user.errors.any? %>
+<%= @user.errors.count %>error prohibited this obj from being saved:
+  <% @user.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+<% end %>
 <%= form_with model:@user, local:true do |f| %>
 <div class="form-group">
-<ul><label for="inputName">Name</label></ul>
-<%= f.text_field :name, autofocus: true, id:"inputName"%>
+<ul><label for="user_name">Name</label></ul>
+<%= f.text_field :name, autofocus: true, id:"user_name"%>
 <%= attachment_image_tag@user, :profile_image%>
 <ul><label for="inputImage">Image</label></ul>
 <%= f.attachment_field:profile_image %>
-<ul><label for="inputIntroduction">Introduction</label></ul>
- <%= f.text_field :introduction, autofocus: true,id:"introduction"%>
+<ul><label for="uuser_introduction">Introduction</label></ul>
+ <%= f.text_field :introduction, autofocus: true,id:"user_introduction"%>
   <ul><%= f.submit "Update User", class: "btn btn-sm btn-secondary" %></ul>
 <% end %>
 </div>

@@ -1,6 +1,6 @@
 <p id="notice">
      <%= notice %>
-<div class="container">
+<div class="container  px-5 px-sm-0">
 <div class="row">
     <div class="col-md-3">
 <%= render 'books/list2',user: @user %>
@@ -20,7 +20,7 @@
 <% end %>
 </div>
 </div>
-<div class="col-md-9">
+<div class="col-md-8 offset-md-1">
     <h1>Book detail</h1>
     <table class="table">
 
@@ -29,9 +29,9 @@
     <td><%= attachment_image_tag @user, :profile_image, :fill, 10, 10, fallback: "no_image.jpg"%>
     <p><%= link_to @user.name, user_path(@user) %></p></td>
     <td><%=link_to @book.title %></td>
-    <td><%= @book.body %></td>  
-    <% if @book.user = current_user %>
-    <td><%= link_to'Edit', edit_book_path(@book), class: "btn btn-sm btn-success" %></td>
+    <td><%= @book.body %></td>
+    <% if @book.user == current_user %>
+    <td><%= link_to'Edit', edit_book_path(@book.id), class: "btn btn-sm btn-success" %></td>
     <td><%= link_to'Destroy', book_path(@book), method: :delete, data: {confirm: "本当に消しますか？"}, class: "btn btn-sm btn-danger" %></td>
     <% end %>
     </tr>
